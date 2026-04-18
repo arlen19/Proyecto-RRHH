@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos Humanos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="card" id="seccionBusqueda">
+    <h1 class="titulo-gradiente">Sistema de Recursos Humanos</h1>
+  <h2>🔍 Buscar empleados</h2>
+
+  <input type="text" id="buscarGeneral" placeholder="Buscar por ID o nombre">
+  <button onclick="buscarEmpleados()">Buscar</button>
+
+  <h2>Resultados</h2>
+
+  <div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Puesto</th>
+        <th>Departamento</th>
+        <th>Salario</th>
+      </tr>
+    </thead>
+
+    <!-- 🔥 SOLO UNA VEZ -->
+    <tbody id="resultadoBusqueda"></tbody>
+
+  </table>
+  </div>
+
+  <!-- 🔥 CONTENEDOR PARA HISTORIAL -->
+  <div id="historial"></div>
+</div>
+
+<div class="card" id="seccionIncidencias"> 
+  <h2>📝 Gestión de Incidencias</h2>
+
+  <!-- FORMULARIO -->
+  <input type="number" id="emp_no" placeholder="ID Empleado">
+  <input type="text" id="tipo" placeholder="Tipo">
+  <input type="date" id="fecha">
+  <input type="text" id="descripcion" placeholder="Descripción">
+  <input type="text" id="estatus" placeholder="Estatus">
+
+  <button onclick="crearIncidencia()">Crear</button>
+
+  <h3 id="tituloListado" style="display:none;">Listado</h3>
+
+  <div class="table-container" id="contenedorTabla" style="display:none;">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Empleado</th>
+        <th>Tipo</th>
+        <th>Fecha</th>
+        <th>Descripción</th>
+        <th>Estatus</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody id="tablaIncidencias"></tbody>
+  </table>
+  </div>
+</div>
+
+
+<div class="card" id="seccionDashboard">
+  <h2>📊 Dashboard</h2>
+  <h2>Empleados por departamento</h2>
+  <div class="chart-box">
+  <canvas id="graficaDeptos"></canvas>
+</div>
+
+<h2>Salario promedio por departamento</h2>
+<div class="chart-box">
+  <canvas id="graficaSalarios"></canvas>
+</div>
+
+<h2>Número de empleados por puesto</h2>
+<div class="chart-box">
+  <canvas id="graficaPuestos"></canvas>
+</div>
+</div>
+
+<!-- 🌤️ CLIMA -->
+<div id="clima" class="clima-box">
+Cargando clima...
+</div>
+
+<button onclick="toggleDarkMode()">🌙 Modo oscuro</button>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

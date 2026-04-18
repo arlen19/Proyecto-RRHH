@@ -1,0 +1,280 @@
+/* 🌐 Base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #eef2f7, #f8fafc);
+  margin: 0;
+  padding: 20px;
+  color: #333;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* 📦 Contenedor */
+.card {
+  max-width: 1100px;
+  margin: 0 auto 30px auto; /* 👈 aquí está la clave */
+  /*background: rgba(255, 255, 255, 0.9);*/
+  background: Gainsboro;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  animation: fadeIn 0.5s ease;
+  backdrop-filter: blur(10px);
+  background: var(--card);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  transition: 0.2s;
+}
+
+.titulo-gradiente {
+  font-size: 30px;
+  font-weight: bold;
+
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+
+  /* Compatibilidad */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* 🧠 Títulos */
+h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #2c3e50;
+
+  border-left: 5px solid #007bff;
+  padding-left: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 🔍 Buscador */
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.card input {
+  width: auto;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0,123,255,0.2);
+}
+
+/* 🔘 Botones */
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #007bff, #00aaff);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* 📊 Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Encabezado */
+th {
+  background: linear-gradient(135deg, #007bff, #00aaff);
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+}
+
+/* Celdas */
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  font-size: 14px;
+}
+
+td:nth-child(4) {
+  font-weight: bold;
+}
+
+/* Hover filas */
+tbody tr {
+  transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+  background: #f1f7ff;
+  transform: scale(1.01);
+}
+
+/* 📊 Historial */
+#historial {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f9fbff;
+  border-left: 4px solid #007bff;
+}
+
+.dark #historial {
+  background: #1e1e1e;
+  color: #ffffff;
+  border-left: 4px solid #00c6ff;
+}
+
+.dark #historial table {
+  color: white;
+}
+
+.dark #historial th {
+  background: #333;
+}
+
+.dark #historial td {
+  border-bottom: 1px solid #444;
+}
+
+/* ✨ Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.clima-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  font-size: 13px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  backdrop-filter: blur(5px);
+}
+
+.clima-box:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+.clima-box {
+  animation: fadeIn 0.5s ease;
+}
+
+#tablaIncidencias button {
+  padding: 5px 8px;
+  font-size: 12px;
+}
+
+.chart-box {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.chart-box canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .chart-box {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-box {
+    height: 180px;
+  }
+}
+
+:root {
+  --bg: linear-gradient(135deg, #eef2f7, #f8fafc);
+  --card: gainsboro;
+  --text: #333;
+  --primary: #007bff;
+  --secondary: #00c6ff;
+}
+
+body.dark {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #eaeaea;
+  --primary: #4da3ff;
+  --secondary: #00c6ff;
+}
+
+button {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.dark-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;  /* 👈 aquí el cambio */
+  z-index: 1000;
+
+  background: #222;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+}
