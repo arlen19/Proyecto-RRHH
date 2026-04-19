@@ -1,0 +1,25 @@
+# Dependencias
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Variables de entorno
+.env
+.env.local
+
+# Sistema
+.DS_Store
+
+# Build
+dist/
+build/
+
+# Editor
+.vscode/
+
+# Otros
+*.pem
+*.tsbuildinfo
